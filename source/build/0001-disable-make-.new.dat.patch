@@ -1,0 +1,25 @@
+From 0248463f3673aaa191c01c6e6b6d405cfdc20d5c Mon Sep 17 00:00:00 2001
+From: ccfxny <9886712@126.com>
+Date: Thu, 17 Dec 2015 20:32:50 +0800
+Subject: [PATCH] disable make .new.dat
+
+Change-Id: Ib02b032c525b21220f107d0f3778f7491b0db455
+---
+ core/Makefile | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/core/Makefile b/core/Makefile
+index 9ab196a..d5d47d6 100644
+--- a/core/Makefile
++++ b/core/Makefile
+@@ -1726,7 +1726,6 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS)
+ 	@echo -e ${CL_YLW}"Package OTA:"${CL_RST}" $@"
+ 	$(hide) MKBOOTIMG=$(MKBOOTIMG) \
+ 	   $(OTA_FROM_TARGET_SCRIPT) -v \
+-	   --block \
+ 	   $(if $(WITH_LZMA_OTA), -z) \
+ 	   -p $(HOST_OUT) \
+ 	   -k $(KEY_CERT_PAIR) \
+-- 
+1.9.0
+
